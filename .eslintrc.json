@@ -33,7 +33,13 @@
         "arrow-parens": [
             "error",
             "as-needed"
-        ]
+        ],
+        "import/no-named-as-default": "off",
+        "no-param-reassign": "off",
+        "import/extensions": "off",
+        "no-restricted-globals": "off",
+        "no-constant-condition": "off",
+        "react/destructuring-assignment": "off"
     },
     "ignorePatterns": [
         "dist/",
