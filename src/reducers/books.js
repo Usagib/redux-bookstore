@@ -1,6 +1,26 @@
 const CREATE_BOOK = 'CREATE_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 
+const initialState = {
+  books: [
+    {
+      id: Math.round(Math.random()*100),
+      title: 'Tom Swayer',
+      category: 'Kids',
+    },
+    {
+      id: Math.round(Math.random()*100),
+      title: 'The Crow',
+      category: 'Horror',
+    },
+    {
+      id: Math.round(Math.random()*100),
+      title: 'Tiger Tiger',
+      category: 'Sci-Fi',
+    }
+  ],
+};
+
 const booksReducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_BOOK:
@@ -13,5 +33,5 @@ const booksReducer = (state = initialState, action) => {
 };
 
 export {
-  bookReducer,
+  booksReducer,
 }
