@@ -1,11 +1,11 @@
 import React from 'react';
 import BookList from './BookList';
 import BookForm from './BookForm';
-import { booksReducer } from '../reducers/books';
+import rootReducer from '../reducers/index';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-const store = createStore(booksReducer);
+const store = createStore(rootReducer);
 
 const App = () => {
     return (

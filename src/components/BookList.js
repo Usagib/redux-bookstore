@@ -23,7 +23,7 @@ class BookList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-      books: state.books
+      books: state.booksReducer.books
 });
 
 export default connect(mapStateToProps)(BookList);
