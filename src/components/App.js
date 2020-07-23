@@ -7,15 +7,13 @@ import rootReducer from "../reducers/index";
 
 const store = createStore(rootReducer);
 
-const App = () => {
-  return (
-    <div>
-      <Provider store={store}>
-        <BookList />
-      </Provider>
-      <BookForm />
-    </div>
-  );
-};
+const App = () => (
+  <div>
+    <Provider store={store}>
+      <BookList />
+    </Provider>
+    <BookForm />
+  </div>
+);
 
 export default App;
