@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import Book from "./Book";
 
 const BookList = (props) => {
@@ -14,6 +15,10 @@ const BookList = (props) => {
       {books.map((book) => (<Book key={book.id} book={book} />))}
     </table>
   );
+};
+
+BookList.propTypes = {
+  books: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = (state) => ({
