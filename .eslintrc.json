@@ -48,7 +48,7 @@
     ],
     "object-shorthand": [
       "error",
-      "always"
+      "as-needed"
     ]
   },
   "ignorePatterns": [
