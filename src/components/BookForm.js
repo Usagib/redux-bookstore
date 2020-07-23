@@ -24,7 +24,6 @@ const BookForm = () => {
         })}
       </select>
       <br />
-      <br />
       <button type="submit">Confirm</button>
     </form>
   );

@@ -16,7 +16,7 @@ const BookList = (props) => {
       })}
     </table>
   );
-}
+};
 
 const mapStateToProps = (state) => ({
   books: state.booksReducer.books,
