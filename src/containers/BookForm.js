@@ -20,7 +20,6 @@ const BookForm = () => (
       <option value={cat}>Category</option>
       {cat.map((cat) => (<option key={cat.id}>{cat}</option>))}
     </select>
-    <br />
     <button type="submit">Confirm</button>
   </form>
 );
