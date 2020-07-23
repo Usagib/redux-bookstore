@@ -45,10 +45,6 @@
     "arrow-body-style": [
       "error",
       "as-needed"
-    ],
-    "object-shorthand": [
-      "error",
-      "always"
     ]
   },
   "ignorePatterns": [
