@@ -32,4 +32,4 @@ const booksReducer = (state = initialState, action) => {
   }
 };
 
-export { booksReducer };
+export default booksReducer;

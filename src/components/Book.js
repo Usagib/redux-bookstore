@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Book = (props) => {
   const { book } = props;
@@ -11,7 +11,7 @@ const Book = (props) => {
       <td>{category}</td>
     </tr>
   );
-}
+};
 
 Book.propTypes = {
   book: PropTypes.object.isRequired,
