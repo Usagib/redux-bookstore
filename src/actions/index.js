@@ -2,21 +2,11 @@ const REMOVE_BOOK = "REMOVE_BOOK";
 const CREATE_BOOK = "CREATE_BOOK";
 
 const createBook = (book) => {
-  return (
-    {
-      type: CREATE_BOOK,
-      book: book,
-    }
-  );
+  return { type: CREATE_BOOK, book: book, };
 };
 
 const removeBook = (book) => {
-  return (
-    {
-      type: REMOVE_BOOK,
-      book: book,
-    }
-  );
+  return { type: REMOVE_BOOK, book: book, };
 };
 
 export {
