@@ -1,17 +1,10 @@
 import React from "react";
-import { createStore } from "redux";
-import { Provider } from "react-redux";
-import BookList from "./BookList";
-import BookForm from "./BookForm";
-import rootReducer from "../reducers/index";
-
-const store = createStore(rootReducer);
+import BookList from "../containers/BookList";
+import BookForm from "../containers/BookForm";
 
 const App = () => (
   <div>
-    <Provider store={store}>
-      <BookList />
-    </Provider>
+    <BookList />
     <BookForm />
   </div>
 );
