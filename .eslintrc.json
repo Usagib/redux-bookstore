@@ -1,42 +1,54 @@
 {
-    "env": {
-        "browser": true,
-        "es6": true,
-        "jest": true
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "extends": [
-        "airbnb",
-        "plugin:react/recommended"
-    ],
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-        "react/jsx-filename-extension": [
-            "warn",
-            {
-                "extensions": [
-                    ".js",
-                    ".jsx"
-                ]
-            }
-        ],
-        "import/no-unresolved": "off",
-        "no-shadow": "off",
-        "arrow-parens": [
-            "error",
-            "as-needed"
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [
+      "warn",
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
         ]
-    },
-    "ignorePatterns": [
-        "dist/",
-        "build/"
+      }
+    ],
+    "import/no-unresolved": "off",
+    "no-shadow": "off",
+    "import/no-named-as-default": "off",
+    "no-param-reassign": "off",
+    "import/extensions": "off",
+    "react/jsx-uses-vars": "error",
+    "react/jsx-uses-react": "error",
+    "quotes": [
+      "error",
+      "double",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "arrow-body-style": [
+      "error",
+      "as-needed"
     ]
+  },
+  "ignorePatterns": [
+    "dist/",
+    "build/"
+  ]
 }
