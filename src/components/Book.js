@@ -10,4 +10,8 @@ const Book = () => {
   );
 }
 
+Book.propTypes = {
+  book: PropTypes.any,
+};
+
 export default Book;
