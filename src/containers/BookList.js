@@ -17,6 +17,12 @@ class BookList extends React.Component {
 
   render() {
     const { books } = this.props;
+    let booksToRender;
+    if (books) {
+      booksToRender = books.map((book) => (
+        <Book key={book.id} book={book} removeBook={this.handleRemoveBook(book)} />
+      ))
+    }
     return (
       <table>
         <tr>
@@ -24,9 +30,7 @@ class BookList extends React.Component {
           <th>Title</th>
           <th>Category</th>
         </tr>
-        {books.map((book) => (
-          <Book key={book.id} book={book} removeBook={this.handleRemoveBook(book)} />
-        ))};
+        {booksToRender}
       </table>
     );
   }
