@@ -22,7 +22,7 @@ class BookList extends React.Component {
           <th>Title</th>
           <th>Category</th>
         </tr>
-        {this.props.books.map((book) => (
+        {books.map((book) => (
           <Book key={book.id} book={book} removeBook={this.handleRemove(book)} />
         ))}
       </table>
