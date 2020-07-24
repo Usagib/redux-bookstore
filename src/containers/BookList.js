@@ -7,14 +7,16 @@ import Book from "../components/Book";
 class BookList extends React.Component {
   constructor(props) {
     super(props);
-    this.handleRemove = this.handleRemove.bind(this);
+    this.handleRemoveBook = this.handleRemoveBook.bind(this);
   }
 
-  handleRemove(book) {
-    this.props.bookRemove(book);
+  handleRemoveBook(book) {
+    const { removeBook } = this.props;
+    removeBook(book.id);
   }
 
   render() {
+    const { books } = this.props;
     return (
       <table>
         <tr>
@@ -23,27 +25,24 @@ class BookList extends React.Component {
           <th>Category</th>
         </tr>
         {books.map((book) => (
-          <Book key={book.id} book={book} removeBook={this.handleRemove(book)} />
-        ))}
+          <Book key={book.id} book={book} removeBook={this.handleRemoveBook(book)} />
+        ))};
       </table>
     );
   }
 };
 
-BookList.propTypes = {
-  books: PropTypes.string.isRequired,
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    bookRemove: (book) => {
-      dispatch(removeBook(book))
-    }
-  }
-};
+const mapDispatchToProps = (dispatch) => ({
+  removeBook: id => dispatch(removeBook(id)),
+});
 
 const mapStateToProps = (state) => ({
-  books: state.booksReducer,
+  books: state.books,
 });
+
+BookList.propTypes = {
+  books: PropTypes.object.isRequired,
+  removeBook: PropTypes.func.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);
