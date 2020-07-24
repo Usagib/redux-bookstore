@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Book = (props) => {
+  console.log(props);
   const { book } = props;
   const { id, title, category } = book;
   return (
@@ -9,6 +10,7 @@ const Book = (props) => {
       <td>{id}</td>
       <td>{title}</td>
       <td>{category}</td>
+      <td><button type="submit" onClick={this.props.handleRemove(book)}>Remove</button></td>
     </tr>
   );
 };

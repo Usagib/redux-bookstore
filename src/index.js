@@ -25,7 +25,7 @@ const initialState = [
   },
 ];
 
-const store = createStore(rootReducer, { books: initialState });
+const store = createStore(rootReducer, { booksReducer: initialState });
 
 ReactDOM.render(
   <Provider store={store}>
