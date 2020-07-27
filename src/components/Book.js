@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Book = (props) => {
+  console.log('bookcomponent prop');
+  console.log(props);
   const { book } = props;
   const { id, title, category } = book;
   const { onClick } = props;
@@ -9,7 +11,7 @@ const Book = (props) => {
     onClick(book);
   };
   return (
-    <tr key={`book${id}`}>
+    <tr>
       <td>{id}</td>
       <td>{title}</td>
       <td>{category}</td>
@@ -19,8 +21,8 @@ const Book = (props) => {
 };
 
 Book.propTypes = {
-  book: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  id: PropTypes.string,
+  title: PropTypes.string,
 };
 
 export default Book;

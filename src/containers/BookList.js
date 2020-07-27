@@ -16,21 +16,22 @@ class BookList extends React.Component {
   }
 
   render() {
-    const { books } = this.props;
-    let booksToRender;
-    if (books) {
-      booksToRender = books.map((book) => (
-        <Book key={book.id} book={book} removeBook={this.handleRemoveBook(book)} />
-      ))
-    }
+    const { bookList } = this.props;
+
     return (
       <table>
-        <tr>
-          <th>Book ID</th>
-          <th>Title</th>
-          <th>Category</th>
-        </tr>
-        {booksToRender}
+        <thead>
+          <tr>
+            <th>Book ID</th>
+            <th>Title</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          {bookList.map((book) => (
+            <Book key={book.id} book={book}/>
+          ))}
+        </tbody>
       </table>
     );
   }
@@ -41,12 +42,11 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-  books: state.books,
+  bookList: state.books,
 });
 
 BookList.propTypes = {
-  books: PropTypes.object.isRequired,
-  removeBook: PropTypes.func.isRequired,
+  book: PropTypes.object,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);
