@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 const Book = (props) => {
   const { book } = props;
@@ -25,12 +24,6 @@ const Book = (props) => {
       </td>
     </tr>
   );
-};
-
-Book.propTypes = {
-  book: PropTypes.string,
-  id: PropTypes.string,
-  title: PropTypes.string,
 };
 
 export default Book;
