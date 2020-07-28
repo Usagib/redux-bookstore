@@ -1,15 +1,27 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
-class Book extends React.Component {
-    render() {
-        return (
-            <tr key={this.props.book.id}>
-                <td>{this.props.book.id}</td>
-                <td>{this.props.book.title}</td>
-                <td>{this.props.book.category}</td>
-            </tr>
-        );
-    }
-}
+const Book = (props) => {
+  const { book } = props;
+  const { id, title, category } = book;
+  const { clickHandler } = props;
+  const removeBook = () => {
+    clickHandler(book);
+  };
+  return (
+    <tr>
+      <td>{id}</td>
+      <td>{title}</td>
+      <td>{category}</td>
+      <td><button type="submit" onClick={()=> {
+        removeBook(book)}}>Remove</button></td>
+    </tr>
+  );
+};
+
+Book.propTypes = {
+  id: PropTypes.string,
+  title: PropTypes.string,
+};
 
 export default Book;

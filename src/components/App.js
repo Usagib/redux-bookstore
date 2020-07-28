@@ -1,21 +1,12 @@
-import React from 'react';
-import BookList from './BookList';
-import BookForm from './BookForm';
-import { booksReducer } from '../reducers/books';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+import React from "react";
+import BookList from "../containers/BookList";
+import BookForm from "../containers/BookForm";
 
-const store = createStore(booksReducer);
-
-const App = () => {
-    return (
-        <div>
-        <Provider store={store}>
-            <BookList />
-        </Provider>
-            <BookForm />
-        </div>
-    )
-}
+const App = () => (
+  <div>
+    <BookList />
+    <BookForm />
+  </div>
+);
 
 export default App;
