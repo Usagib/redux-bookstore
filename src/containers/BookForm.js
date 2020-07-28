@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from 'react-redux';
 import { createBook } from '../actions/index';
 
-const cat = [
+export const cat = [
   "Action",
   "Biography",
   "History",
@@ -16,7 +16,7 @@ class BookForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: Math.round(Math.random()*100),
+      id: Math.round(Math.random() * 100),
       title: '',
       category: '',
     };
@@ -26,19 +26,19 @@ class BookForm extends React.Component {
 
   handleChange(event) {
     event.preventDefault();
-    switch(event.target.id) {
+    switch (event.target.id) {
       case 'Category':
         this.setState({
           category: event.target.value,
         });
-      break;
+        break;
       case 'Title':
         this.setState({
           title: event.target.value,
         });
-      break;
+        break;
       default:
-       return this.state;
+        return this.state;
     }
   }
 
@@ -46,14 +46,14 @@ class BookForm extends React.Component {
     event.preventDefault();
     this.props.bookSubmit(this.state);
     this.setState({
-      id: Math.round(Math.random()*100),
+      id: Math.round(Math.random() * 100),
       title: '',
       category: '',
     });
   }
 
   render() {
-    return(
+    return (
       <form>
         <h3>Add a book</h3>
         <br />
