@@ -44,12 +44,18 @@ class BookForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.bookSubmit(this.state);
-    this.setState({
-      id: Math.round(Math.random() * 100),
-      title: '',
-      category: '',
-    });
+    console.log(this.state.title);
+    console.log(this.state.category);
+    if (this.state.title === '' || this.state.category === '') {
+      alert('Please enter your book name and category');
+    } else {
+      this.props.bookSubmit(this.state);
+      this.setState({
+        id: Math.round(Math.random() * 100),
+        title: '',
+        category: '',
+      });
+    }
   }
 
   render() {
@@ -61,7 +67,8 @@ class BookForm extends React.Component {
           value={this.state.title}
           onChange={this.handleChange}
           type="text"
-          placeholder="title" />
+          placeholder="title"
+        />
         <br />
         <select id="Category"
           value={this.state.category}
