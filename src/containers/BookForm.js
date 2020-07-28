@@ -31,12 +31,10 @@ class BookForm extends React.Component {
         this.setState({
           category: event.target.value,
         });
-        break;
       case "Title":
         this.setState({
           title: event.target.value,
         });
-        break;
       default:
         return this.state;
     }
@@ -46,7 +44,7 @@ class BookForm extends React.Component {
     event.preventDefault();
 
     if (this.state.title === "" || this.state.category === "") {
-      alert("Please enter your book name and category");
+      alert("Please enter your book name and category"); // eslint-disable-line no-alert
     } else {
       this.props.bookSubmit(this.state);
       this.setState({
@@ -90,12 +88,10 @@ class BookForm extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    bookSubmit: (book) => {
-      dispatch(createBook(book));
-    },
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  bookSubmit: (book) => {
+    dispatch(createBook(book));
+  },
+});
 
 export default connect(null, mapDispatchToProps)(BookForm);

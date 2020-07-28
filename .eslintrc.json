@@ -29,6 +29,7 @@
     "react/jsx-uses-react": "error",
     "react/prop-types": 0,
     "react/destructuring-assignment": [0, { "extensions": [".jsx"] }],
+    "treatUndefinedAsUnspecified": false,
     "quotes": [
       "error",
       "double",
