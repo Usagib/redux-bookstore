@@ -31,8 +31,8 @@
     "prefer-destructuring": [
       "error",
       {
-        "array": true,
-        "object": true
+        "array": false,
+        "object": false
       },
       {
         "enforceForRenamedProperties": false
