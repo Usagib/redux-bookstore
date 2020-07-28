@@ -8,8 +8,8 @@ import rootReducer from "./reducers/index";
 import App from "./components/App";
 
 const store = createStore(rootReducer);
-console.log('store state');
-console.log(store.getState());
+// console.log('store state');
+// console.log(store.getState());
 
 ReactDOM.render(
   <Provider store={store}>

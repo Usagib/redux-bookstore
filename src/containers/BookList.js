@@ -12,7 +12,7 @@ class BookList extends React.Component {
 
   handleRemoveBook(book) {
     const { removeBook } = this.props;
-    removeBook(book.id);
+    removeBook(book);
   }
 
   render() {
@@ -29,7 +29,7 @@ class BookList extends React.Component {
         </thead>
         <tbody>
           {bookList.map((book) => (
-            <Book key={book.id} book={book}/>
+            <Book key={book.id} book={book} clickHandler={this.handleRemoveBook} />
           ))}
         </tbody>
       </table>

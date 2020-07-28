@@ -25,6 +25,7 @@ class BookForm extends React.Component {
   }
 
   handleChange(event) {
+    event.preventDefault();
     switch(event.target.id) {
       case 'Category':
         this.setState({
@@ -37,14 +38,15 @@ class BookForm extends React.Component {
         });
       break;
       default:
-        return true;
+       return this.state;
     }
   }
 
-  handleSubmit() {
+  handleSubmit(event) {
+    event.preventDefault();
     this.props.bookSubmit(this.state);
     this.setState({
-      id: 0,
+      id: Math.round(Math.random()*100),
       title: '',
       category: '',
     });
@@ -64,8 +66,8 @@ class BookForm extends React.Component {
         <select id="Category"
           value={this.state.category}
           onChange={this.handleChange}>
-          <option value={cat}>Category</option>
-          {cat.map((cat) => (<option key={cat.id}>{cat}</option>))}
+          <option key="cat-default" value={cat}>Category</option>
+          {cat.map(cat => (<option key={`cat-${cat}`}>{cat}</option>))}
         </select>
         <button type="submit" onClick={this.handleSubmit}>Confirm</button>
       </form>
