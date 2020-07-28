@@ -90,8 +90,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-// BookForm.propType = {
-//   title: PropTypes
-// }
-
 export default connect(null, mapDispatchToProps)(BookForm);
