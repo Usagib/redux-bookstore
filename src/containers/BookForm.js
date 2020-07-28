@@ -1,6 +1,6 @@
 import React from "react";
-import { connect } from 'react-redux';
-import { createBook } from '../actions/index';
+import { connect } from "react-redux";
+import { createBook } from "../actions/index";
 
 const cat = [
   "Action",
@@ -17,8 +17,8 @@ class BookForm extends React.Component {
     super(props);
     this.state = {
       id: Math.round(Math.random() * 100),
-      title: '',
-      category: '',
+      title: "",
+      category: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,12 +27,12 @@ class BookForm extends React.Component {
   handleChange(event) {
     event.preventDefault();
     switch (event.target.id) {
-      case 'Category':
+      case "Category":
         this.setState({
           category: event.target.value,
         });
         break;
-      case 'Title':
+      case "Title":
         this.setState({
           title: event.target.value,
         });
@@ -40,20 +40,19 @@ class BookForm extends React.Component {
       default:
         return this.state;
     }
+    return
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state.title);
-    console.log(this.state.category);
-    if (this.state.title === '' || this.state.category === '') {
-      alert('Please enter your book name and category');
+    if (this.state.title === "" || this.state.category === "") {
+      alert("Please enter your book name and category");
     } else {
       this.props.bookSubmit(this.state);
       this.setState({
         id: Math.round(Math.random() * 100),
-        title: '',
-        category: '',
+        title: "",
+        category: "",
       });
     }
   }
@@ -80,7 +79,7 @@ class BookForm extends React.Component {
       </form>
     );
   }
-};
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -88,6 +87,6 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(createBook(book))
     }
   }
-};
+}
 
 export default connect(null, mapDispatchToProps)(BookForm);
