@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { cat } from './BookForm';
 
-const CategoryFilter = ({ handleFilterChange }) => {
+const CategoryFilter = (props) => {
     const { onChange } = props;
-    
     const handleChange = (event) => {
         const { value } = event.target;
         onChange(value);
@@ -22,7 +21,7 @@ const CategoryFilter = ({ handleFilterChange }) => {
 };
 
 CategoryFilter.propTypes = {
-
+    onChange: PropTypes.func.isRequired,
 };
 
 export default CategoryFilter;

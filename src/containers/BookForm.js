@@ -45,7 +45,6 @@ class BookForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
     if (this.state.title === "" || this.state.category === "") {
       alert("Please enter your book name and category"); // eslint-disable-line no-alert
     } else {
