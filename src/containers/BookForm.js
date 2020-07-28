@@ -31,10 +31,12 @@ class BookForm extends React.Component {
         this.setState({
           category: event.target.value,
         });
+        break;
       case "Title":
         this.setState({
           title: event.target.value,
         });
+        break;
       default:
         return this.state;
     }
