@@ -14,14 +14,23 @@ const Book = (props) => {
       <td>{title}</td>
       <td>{category}</td>
       <td>
-        <button type="submit"
+        <button
+          type="submit"
           onClick={() => {
             removeBook(book);
-          }}>
-          Remove</button>
+          }}
+        >
+          Remove
+        </button>
       </td>
     </tr>
   );
+};
+
+Book.propTypes = {
+  book: PropTypes.string,
+  id: PropTypes.string,
+  title: PropTypes.string,
 };
 
 export default Book;

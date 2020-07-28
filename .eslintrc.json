@@ -11,21 +11,13 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "extends": [
-    "airbnb",
-    "plugin:react/recommended"
-  ],
-  "plugins": [
-    "react"
-  ],
+  "extends": ["airbnb", "plugin:react/recommended"],
+  "plugins": ["react"],
   "rules": {
     "react/jsx-filename-extension": [
       "warn",
       {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+        "extensions": [".js", ".jsx"]
       }
     ],
     "import/no-unresolved": "off",
@@ -35,6 +27,17 @@
     "import/extensions": "off",
     "react/jsx-uses-vars": "error",
     "react/jsx-uses-react": "error",
+    "react/prop-types": 0,
+    "prefer-destructuring": [
+      "error",
+      {
+        "array": true,
+        "object": true
+      },
+      {
+        "enforceForRenamedProperties": false
+      }
+    ],
     "quotes": [
       "error",
       "double",
@@ -42,13 +45,7 @@
         "avoidEscape": true
       }
     ],
-    "arrow-body-style": [
-      "error",
-      "as-needed"
-    ]
+    "arrow-body-style": ["error", "as-needed"]
   },
-  "ignorePatterns": [
-    "dist/",
-    "build/"
-  ]
+  "ignorePatterns": ["dist/", "build/"]
 }
