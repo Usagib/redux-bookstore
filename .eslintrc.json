@@ -28,7 +28,7 @@
     "react/jsx-uses-vars": "error",
     "react/jsx-uses-react": "error",
     "react/prop-types": 0,
-    "react/destructuring-assignment": [true, { "extensions": [".jsx"] }],
+    "react/destructuring-assignment": [0, { "extensions": [".jsx"] }],
     "quotes": [
       "error",
       "double",
