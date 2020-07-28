@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { removeBook } from "../actions/index";
 import Book from "../components/Book";
+import CategoryFilter from "../components/CategoryFilter";
 
 class BookList extends React.Component {
   constructor(props) {
@@ -34,6 +35,10 @@ class BookList extends React.Component {
               clickHandler={this.handleRemoveBook}
             />
           ))}
+          <h4>Filter:</h4>
+          <CategoryFilter
+            handleFilterChange={handleFilterChange}
+          />
         </tbody>
       </table>
     );

@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { createBook } from "../actions/index";
 
-const cat = [
+export const cat = [
   "Action",
   "Biography",
   "History",
