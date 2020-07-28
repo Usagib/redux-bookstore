@@ -40,6 +40,7 @@ class BookForm extends React.Component {
       default:
         return this.state;
     }
+    return false;
   }
 
   handleSubmit(event) {
