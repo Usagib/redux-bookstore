@@ -40,7 +40,6 @@ class BookForm extends React.Component {
       default:
         return this.state;
     }
-    return
   }
 
   handleSubmit(event) {
@@ -62,20 +61,29 @@ class BookForm extends React.Component {
       <form>
         <h3>Add a book</h3>
         <br />
-        <input id="Title"
+        <input
+          id="Title"
           value={this.state.title}
           onChange={this.handleChange}
           type="text"
           placeholder="title"
         />
         <br />
-        <select id="Category"
+        <select
+          id="Category"
           value={this.state.category}
-          onChange={this.handleChange}>
-          <option key="cat-default" value={cat}>Category</option>
-          {cat.map(cat => (<option key={`cat-${cat}`}>{cat}</option>))}
+          onChange={this.handleChange}
+        >
+          <option key="cat-default" value={cat}>
+            Category
+          </option>
+          {cat.map((cat) => (
+            <option key={`cat-${cat}`}>{cat}</option>
+          ))}
         </select>
-        <button type="submit" onClick={this.handleSubmit}>Confirm</button>
+        <button type="submit" onClick={this.handleSubmit}>
+          Confirm
+        </button>
       </form>
     );
   }
@@ -84,9 +92,9 @@ class BookForm extends React.Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     bookSubmit: (book) => {
-      dispatch(createBook(book))
-    }
-  }
-}
+      dispatch(createBook(book));
+    },
+  };
+};
 
 export default connect(null, mapDispatchToProps)(BookForm);

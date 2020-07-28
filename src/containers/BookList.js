@@ -29,7 +29,11 @@ class BookList extends React.Component {
         </thead>
         <tbody>
           {bookList.map((book) => (
-            <Book key={book.id} book={book} clickHandler={this.handleRemoveBook} />
+            <Book
+              key={book.id}
+              book={book}
+              clickHandler={this.handleRemoveBook}
+            />
           ))}
         </tbody>
       </table>
@@ -38,7 +42,7 @@ class BookList extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  removeBook: id => dispatch(removeBook(id)),
+  removeBook: (id) => dispatch(removeBook(id)),
 });
 
 const mapStateToProps = (state) => ({
