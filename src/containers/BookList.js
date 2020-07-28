@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { removeBook } from "../actions/index";
 import Book from "../components/Book";
@@ -48,9 +47,5 @@ const mapDispatchToProps = (dispatch) => ({
 const mapStateToProps = (state) => ({
   bookList: state.books,
 });
-
-BookList.propTypes = {
-  bookList: PropTypes.object,
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);
