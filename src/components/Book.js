@@ -28,8 +28,8 @@ const Book = (props) => {
 };
 
 Book.propTypes = {
-  id: PropTypes.string,
-  title: PropTypes.string,
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default Book;

@@ -25,8 +25,8 @@ class BookList extends React.Component {
     const { bookList, filter } = this.props;
     let filterBooks = bookList;
 
-    if (filter !== 'All') {
-      filterBooks = bookList.filter(book => book.category === filter);
+    if (filter !== "All") {
+      filterBooks = bookList.filter( (book) => { book.category === filter } );
     }
 
     return (
@@ -58,7 +58,7 @@ class BookList extends React.Component {
 
 const mapDispatchToProps = (dispatch) => ({
   removeBook: (id) => dispatch(removeBook(id)),
-  changeFilter: filter => dispatch(changeFilter(filter)),
+  changeFilter: (filter) => dispatch(changeFilter(filter)),
 });
 
 const mapStateToProps = (state) => ({
@@ -67,7 +67,7 @@ const mapStateToProps = (state) => ({
 });
 
 BookList.defaultProps = {
-  filter: 'All',
-}
+  filter: "All",
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);
