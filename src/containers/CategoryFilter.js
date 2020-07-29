@@ -5,23 +5,23 @@ import { cat } from "./BookForm";
 const CategoryFilter = (props) => {
   const { onChange } = props;
   const handleChange = (event) => {
-      const { value } = event.target;
-      onChange(value);
+    const { value } = event.target;
+    onChange(value);
   };
   return (
     <select name="category" onChange={handleChange}>
-        <option>All</option>
-        {cat.map(category => (
-            <option key={category}>
-                {category}
-            </option>
-        ))}
+      <option>All</option>
+      {cat.map((category) => (
+        <option key={category}>
+          {category}
+        </option>
+      ))}
     </select>
   );
 };
 
 CategoryFilter.propTypes = {
-    onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default CategoryFilter;

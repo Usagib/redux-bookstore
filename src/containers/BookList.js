@@ -26,7 +26,9 @@ class BookList extends React.Component {
     let filterBooks = bookList;
 
     if (filter !== "All") {
-      filterBooks = bookList.filter( (book) => { book.category === filter } );
+      filterBooks = bookList.filter((book) => {
+        return (book.category === filter)
+      });
     }
 
     return (
