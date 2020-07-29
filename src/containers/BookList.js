@@ -26,8 +26,8 @@ class BookList extends React.Component {
     let filterBooks = bookList;
 
     if (filter !== "All") {
-      filterBooks = bookList.filter((book) => {
-        return (book.category === filter)
+      filterBooks = bookList.filter((book) => { // eslint-disable-line arrow-body-style
+        return (book.category === filter);
       });
     }
 
