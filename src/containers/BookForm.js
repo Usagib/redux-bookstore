@@ -82,7 +82,7 @@ class BookForm extends React.Component {
         <br />
         <select
           id="Category"
-          value={ category }
+          value={category}
           onChange={this.handleChange}
         >
           <option key="cat-default" value={cat}>

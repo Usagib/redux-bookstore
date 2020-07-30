@@ -27,11 +27,12 @@ const Book = props => {
 };
 
 Book.propTypes = {
-  book: PropTypes.object.isRequired,
   clickHandler: PropTypes.func.isRequired,
-  id: PropTypes.number,
-  title: PropTypes.string,
-  category: propTypes.string,
+  book: PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    category: PropTypes.string,
+  }),
 };
 
 Book.defaultProps = {
