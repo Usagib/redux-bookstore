@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { removeBook } from "../actions/index";
 import Book from "../components/Book";
@@ -16,7 +17,6 @@ class BookList extends React.Component {
 
   render() {
     const { bookList } = this.props;
-
     return (
       <table>
         <thead>
@@ -47,5 +47,11 @@ const mapDispatchToProps = (dispatch) => ({
 const mapStateToProps = (state) => ({
   bookList: state.books,
 });
+
+BookList.propTypes = {
+  bookList: PropTypes.array.isRequired,
+  removeBook: PropTypes.func.isRequired,
+
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);

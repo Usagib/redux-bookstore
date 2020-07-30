@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createBook } from "../actions/index";
 
@@ -45,9 +46,8 @@ class BookForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
     if (this.state.title === "" || this.state.category === "") {
-      alert("Please enter your book name and category"); // eslint-disable-line no-alert
+      return false;
     } else {
       this.props.bookSubmit(this.state);
       this.setState({
@@ -56,6 +56,7 @@ class BookForm extends React.Component {
         category: "",
       });
     }
+    return true;
   }
 
   render() {
@@ -96,5 +97,9 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(createBook(book));
   },
 });
+
+BookForm.propTypes = {
+  bookSubmit: PropTypes.func.isRequired,
+};
 
 export default connect(null, mapDispatchToProps)(BookForm);
