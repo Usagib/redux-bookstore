@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { removeBook } from "../actions/index";
-import Book from "../components/Book";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { removeBook } from '../actions/index';
+import Book from '../components/Book';
 
 class BookList extends React.Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class BookList extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {bookList.map((book) => (
+          {bookList.map(book => (
             <Book
               key={book.id}
               book={book}
@@ -40,18 +40,16 @@ class BookList extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  removeBook: (id) => dispatch(removeBook(id)),
+const mapDispatchToProps = dispatch => ({
+  removeBook: id => dispatch(removeBook(id)),
 });
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   bookList: state.books,
 });
 
 BookList.propTypes = {
-  bookList: PropTypes.array.isRequired,
   removeBook: PropTypes.func.isRequired,
-
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);

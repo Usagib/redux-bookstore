@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Book = (props) => {
   const { book } = props;
@@ -28,10 +28,9 @@ const Book = (props) => {
 };
 
 Book.propTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
-  book: PropTypes.object.isRequired,
+  id: PropTypes.number,
+  title: PropTypes.string,
+  category: PropTypes.string,
   clickHandler: PropTypes.func.isRequired,
 };
 
@@ -39,6 +38,6 @@ Book.defaultProps = {
   id: 0,
   title: '',
   category: '',
-}
+};
 
 export default Book;
