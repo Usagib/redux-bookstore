@@ -47,13 +47,14 @@ class BookForm extends React.Component {
 
   handleSubmit(event) {
     const { title, category } = this.state;
+    const { bookSubmit } = this.props;
     event.preventDefault();
     if (title === '' || category === '') {
       this.setState({
         error: 'Please make sure to fill all the fields',
-      })
+      });
     } else {
-      this.props.bookSubmit(this.state);
+      bookSubmit(this.state);
       this.setState({
         id: Math.round(Math.random() * 100),
         title: '',
@@ -69,29 +70,29 @@ class BookForm extends React.Component {
     return (
       <form>
         <h3>Add a book</h3>
-        <span>{ error }</span>
+        <span>{error}</span>
         <br />
         <input
-          id='Title'
-          value={ title }
+          id="Title"
+          value={title}
           onChange={this.handleChange}
-          type='text'
-          placeholder='title'
+          type="text"
+          placeholder="title"
         />
         <br />
         <select
-          id='Category'
+          id="Category"
           value={ category }
           onChange={this.handleChange}
         >
-          <option key='cat-default' value={cat}>
+          <option key="cat-default" value={cat}>
             Category
           </option>
           {cat.map(cat => (
             <option key={`cat-${cat}`}>{cat}</option>
           ))}
         </select>
-        <button type='submit' onClick={this.handleSubmit}>
+        <button type="submit" onClick={this.handleSubmit}>
           Confirm
         </button>
       </form>

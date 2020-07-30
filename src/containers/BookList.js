@@ -50,6 +50,7 @@ const mapStateToProps = state => ({
 
 BookList.propTypes = {
   removeBook: PropTypes.func.isRequired,
+  bookList: PropTypes.array.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);
