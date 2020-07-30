@@ -14,30 +14,13 @@
   "extends": ["airbnb", "plugin:react/recommended"],
   "plugins": ["react"],
   "rules": {
-    "react/jsx-filename-extension": [
-      "warn",
-      {
-        "extensions": [".js", ".jsx"]
-      }
-    ],
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "import/no-unresolved": "off",
     "no-shadow": "off",
-    "import/no-named-as-default": "off",
-    "no-param-reassign": "off",
-    "import/extensions": "off",
-    "react/jsx-uses-vars": "error",
-    "react/jsx-uses-react": "error",
-    "react/prop-types": 0,
-    "react/destructuring-assignment": [0, { "extensions": [".jsx"] }],
-    "treatUndefinedAsUnspecified": 0,
-    "quotes": [
-      "error",
-      "double",
-      {
-        "avoidEscape": true
-      }
-    ],
-    "arrow-body-style": ["error", "as-needed"]
+    "arrow-parens": ["error", "as-needed"]
   },
-  "ignorePatterns": ["dist/", "build/"]
+  "ignorePatterns": [
+    "dist/",
+    "build/"
+  ]
 }
