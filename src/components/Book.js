@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Book = props => {
-
   const { book, clickHandler } = props;
   const { id, title, category } = book;
   const removeBook = () => {

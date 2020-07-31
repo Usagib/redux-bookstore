@@ -5,7 +5,6 @@ import { removeBook, changeFilter } from '../actions/index';
 import Book from '../components/Book';
 import CategoryFilter from './CategoryFilter';
 
-
 class BookList extends React.Component {
   constructor(props) {
     super(props);
@@ -28,9 +27,7 @@ class BookList extends React.Component {
     let filterBooks = bookList;
 
     if (filter !== 'All') {
-      filterBooks = bookList.filter(book => {
-        return (book.category === filter);
-      });
+      filterBooks = bookList.filter(book => book.category === filter);
     }
 
     return (
@@ -61,9 +58,9 @@ class BookList extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  removeBook: (id) => dispatch(removeBook(id)),
-  changeFilter: (filter) => dispatch(changeFilter(filter)),
+const mapDispatchToProps = dispatch => ({
+  removeBook: id => dispatch(removeBook(id)),
+  changeFilter: filter => dispatch(changeFilter(filter)),
 });
 
 const mapStateToProps = state => ({
@@ -73,6 +70,7 @@ const mapStateToProps = state => ({
 
 BookList.propTypes = {
   removeBook: PropTypes.func.isRequired,
+  changeFilter: PropTypes.func.isRequired,
   bookList: PropTypes.arrayOf(PropTypes.object).isRequired,
   filter: PropTypes.string,
 };
