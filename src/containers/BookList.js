@@ -5,6 +5,7 @@ import { removeBook, changeFilter } from '../actions/index';
 import Book from '../components/Book';
 import CategoryFilter from './CategoryFilter';
 
+
 class BookList extends React.Component {
   constructor(props) {
     super(props);
@@ -65,7 +66,7 @@ const mapDispatchToProps = (dispatch) => ({
   changeFilter: (filter) => dispatch(changeFilter(filter)),
 });
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   bookList: state.books,
   filter: state.filter,
 });
