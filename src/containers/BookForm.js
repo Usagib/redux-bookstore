@@ -1,15 +1,16 @@
-import React from "react";
-import { connect } from "react-redux";
-import { createBook } from "../actions/index";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createBook } from '../actions/index';
 
 export const cat = [
-  "Action",
-  "Biography",
-  "History",
-  "Horror",
-  "Kids",
-  "Learning",
-  "Sci-Fi",
+  'Action',
+  'Biography',
+  'History',
+  'Horror',
+  'Kids',
+  'Learning',
+  'Sci-Fi',
 ];
 
 class BookForm extends React.Component {
@@ -17,8 +18,9 @@ class BookForm extends React.Component {
     super(props);
     this.state = {
       id: Math.round(Math.random() * 100),
-      title: "",
-      category: "",
+      title: '',
+      category: '',
+      error: '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,12 +29,12 @@ class BookForm extends React.Component {
   handleChange(event) {
     event.preventDefault();
     switch (event.target.id) {
-      case "Category":
+      case 'Category':
         this.setState({
           category: event.target.value,
         });
         break;
-      case "Title":
+      case 'Title':
         this.setState({
           title: event.target.value,
         });
@@ -44,27 +46,35 @@ class BookForm extends React.Component {
   }
 
   handleSubmit(event) {
+    const { title, category } = this.state;
+    const { bookSubmit } = this.props;
     event.preventDefault();
-    if (this.state.title === "" || this.state.category === "") {
-      alert("Please enter your book name and category"); // eslint-disable-line no-alert
+    if (title === '' || category === '') {
+      this.setState({
+        error: 'Please make sure to fill all the fields',
+      });
     } else {
-      this.props.bookSubmit(this.state);
+      bookSubmit(this.state);
       this.setState({
         id: Math.round(Math.random() * 100),
-        title: "",
-        category: "",
+        title: '',
+        category: '',
+        error: '',
       });
     }
+    return true;
   }
 
   render() {
+    const { title, category, error } = this.state;
     return (
       <form>
         <h3>Add a book</h3>
+        <span>{error}</span>
         <br />
         <input
           id="Title"
-          value={this.state.title}
+          value={title}
           onChange={this.handleChange}
           type="text"
           placeholder="title"
@@ -72,13 +82,13 @@ class BookForm extends React.Component {
         <br />
         <select
           id="Category"
-          value={this.state.category}
+          value={category}
           onChange={this.handleChange}
         >
           <option key="cat-default" value={cat}>
             Category
           </option>
-          {cat.map((cat) => (
+          {cat.map(cat => (
             <option key={`cat-${cat}`}>{cat}</option>
           ))}
         </select>
@@ -90,10 +100,14 @@ class BookForm extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  bookSubmit: (book) => {
+const mapDispatchToProps = dispatch => ({
+  bookSubmit: book => {
     dispatch(createBook(book));
   },
 });
+
+BookForm.propTypes = {
+  bookSubmit: PropTypes.func.isRequired,
+};
 
 export default connect(null, mapDispatchToProps)(BookForm);

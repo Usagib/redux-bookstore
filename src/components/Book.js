@@ -1,10 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Book = (props) => {
-  const { book } = props;
+  const { book, clickHandler } = props;
   const { id, title, category } = book;
-  const { clickHandler } = props;
   const removeBook = () => {
     clickHandler(book);
   };
@@ -28,8 +27,12 @@ const Book = (props) => {
 };
 
 Book.propTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
+  clickHandler: PropTypes.func.isRequired,
+  book: PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    category: PropTypes.string,
+  }).isRequired,
 };
 
 export default Book;

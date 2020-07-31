@@ -1,8 +1,9 @@
-import React from "react";
-import { connect } from "react-redux";
-import { removeBook, changeFilter } from "../actions/index";
-import Book from "../components/Book";
-import CategoryFilter from "./CategoryFilter";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { removeBook, changeFilter } from '../actions/index';
+import Book from '../components/Book';
+import CategoryFilter from './CategoryFilter';
 
 class BookList extends React.Component {
   constructor(props) {
@@ -25,8 +26,8 @@ class BookList extends React.Component {
     const { bookList, filter } = this.props;
     let filterBooks = bookList;
 
-    if (filter !== "All") {
-      filterBooks = bookList.filter((book) => { // eslint-disable-line arrow-body-style
+    if (filter !== 'All') {
+      filterBooks = bookList.filter(book => {
         return (book.category === filter);
       });
     }
@@ -41,7 +42,7 @@ class BookList extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {filterBooks.map((book) => (
+          {filterBooks.map(book => (
             <Book
               key={book.id}
               book={book}
@@ -68,8 +69,14 @@ const mapStateToProps = (state) => ({
   filter: state.filter,
 });
 
+BookList.propTypes = {
+  removeBook: PropTypes.func.isRequired,
+  bookList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  filter: PropTypes.string,
+};
+
 BookList.defaultProps = {
-  filter: "All",
+  filter: 'All',
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);
