@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { removeBook, changeFilter } from '../actions/index';
-import Book from '../components/Book';
-import CategoryFilter from './CategoryFilter';
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { removeBook, changeFilter } from "../actions/index";
+import Book from "../components/Book";
+import CategoryFilter from "../components/CategoryFilter";
 
 class BookList extends React.Component {
   constructor(props) {
@@ -26,8 +26,8 @@ class BookList extends React.Component {
     const { bookList, filter } = this.props;
     let filterBooks = bookList;
 
-    if (filter !== 'All') {
-      filterBooks = bookList.filter(book => book.category === filter);
+    if (filter !== "All") {
+      filterBooks = bookList.filter((book) => book.category === filter);
     }
 
     return (
@@ -41,7 +41,7 @@ class BookList extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {filterBooks.map(book => (
+            {filterBooks.map((book) => (
               <Book
                 key={book.id}
                 book={book}
@@ -50,20 +50,18 @@ class BookList extends React.Component {
             ))}
           </tbody>
         </table>
-        <CategoryFilter
-          onChange={this.handleFilterChange}
-        />
+        <CategoryFilter onChange={this.handleFilterChange} />
       </div>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  removeBook: id => dispatch(removeBook(id)),
-  changeFilter: filter => dispatch(changeFilter(filter)),
+const mapDispatchToProps = (dispatch) => ({
+  removeBook: (id) => dispatch(removeBook(id)),
+  changeFilter: (filter) => dispatch(changeFilter(filter)),
 });
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   bookList: state.books,
   filter: state.filter,
 });
@@ -76,7 +74,7 @@ BookList.propTypes = {
 };
 
 BookList.defaultProps = {
-  filter: 'All',
+  filter: "All",
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);
