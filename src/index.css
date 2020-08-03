@@ -1,3 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@300;700&display=swap');
+/*
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto Slab', serif;
+*/
 body {
   margin: 0;
+}
+
+.main-container {
+  position: absolute;
+  height: 1434px;
+  width: 1600px;
+  background-color: #f5f6fa; /*pale-grey*/
+  box-sizing: border-box;
+}
+
+.panel {
+  width: 1400px;
+  height: 1097px;
+  radius: 4px;
+  margin: 149px 100px 188px 100px;/*149px 100px 188px 100px;*/
+  background-color: #fafafa;
+  position: absolute;
+  box-shadow: 20px 20px 50px 0px rgba(0,0,0,0.2);
+}
+
+.nav-bar {
+  width: 1400px;
+  height: 95px;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  position: fixed;
+}
+
+.nav-logo {
+  margin: 29px 100px;
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  color: #0290ff; /*azure*/
+  font-weight: bold;
+}
+
+.list-item {
+  display: inline;
+  margin-right: 50px;
+  margin-left: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #121212;
+  opacity: 50%;
+  letter-spacing: 1.9px;
+}
+
+.lesson-description-category {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #121212;
+  opacity: 50%;
+  margin-left: 27px;
+  margin-top: 32px;
+}
+
+.lesson-description-title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 22px;
+  color: #121212;
+  letter-spacing: -0.2px;
+  font-weight: bold;
+  margin-left: 27px;
+  margin-top: -10px;
+}
+
+.lesson-description-author {
+  font-family: 'Roboto Slab', serif;
+  font-size: 14px;
+  color: #4386bf;
+  letter-spacing: 0;
+  font-weight: lighter;
+  margin-left: 27px;
+  margin-top: -20px;
+}
+
+.lesson-description-links {
+  margin-left: -40px;
+}
+
+.lesson-progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.box {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #eee;
+}
+
+.box .percent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.box .percent svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.box .percent .number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+}
+
+.box .percent svg circle {
+  width: 150px;
+  height: 150px;
+  fill: none;
+  stroke-width: 10;
+  stroke: #000;
+  transform: translate(5px, 5px);
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  stroke-linecap: round;
+}
+
+.box .percent svg circle:nth-child(1) {
+  stroke-dashoffset: 400;
+  stroke: #e8e8e8;
+}
+
+.box .percent svg circle:nth-child(2) {
+  /* change value here to show progress */
+  stroke-dashoffset: 70;
+  stroke: linear-gradient(0deg, rgba(48,123,190,1) 0%, rgba(55,156,246,1) 100%);
+  border:
+}
+
+.lesson-link {
+  display: inline;
+  font-family: 'Roboto Slab', serif;
+  font-size: 14px;
+  color: #4386bf;
+  letter-spacing: 0;
+  font-weight: lighter;
+  margin-left: 27px;
+}
+
+.lesson-panel {
+  width: 1200px;
+  height: 170px;
+  background-color: #ffffff;
+  margin-left: 100px;
+  margin-top: 125px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.list-item:hover {
+  opacity: 100%;
+}
+
+.profile-button {
+  width: 50px;
+  margin-left: 500px;
+  justify-content: center;
+  text-align: center;
 }
