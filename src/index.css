@@ -1,3 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@300;700&display=swap');
+/*
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto Slab', serif;
+*/
 body {
   margin: 0;
+}
+
+.main-container {
+  position: absolute;
+  height: 1434px;
+  width: 1600px;
+  background-color: #f5f6fa; /*pale-grey*/
+  box-sizing: border-box;
+}
+
+.panel {
+  width: 1400px;
+  height: 1097px;
+  radius: 4px;
+  margin: 149px 100px 188px 100px;/*149px 100px 188px 100px;*/
+  background-color: #fafafa;
+  position: absolute;
+  box-shadow: 20px 20px 50px 0px rgba(0,0,0,0.2);
+}
+
+.nav-bar {
+  width: 1400px;
+  height: 95px;
+  margin-bottom: 50px;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.nav-logo {
+  margin: 29px 100px;
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  color: #0290ff; /*azure*/
+  font-weight: bold;
+}
+
+.list-item {
+  display: inline;
+  margin-right: 50px;
+  margin-left: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #121212;
+  opacity: 50%;
+  letter-spacing: 1.9px;
+}
+
+.lesson-description-category {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #121212;
+  opacity: 50%;
+  margin-left: 27px;
+}
+
+.lesson-description-title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 22px;
+  color: #121212;
+  letter-spacing: -0.2px;
+  font-weight: bold;
+  margin-left: 27px;
+  margin-top: -10px;
+}
+
+.lesson-description-author {
+  font-family: 'Roboto Slab', serif;
+  font-size: 14px;
+  color: #4386bf;
+  letter-spacing: 0;
+  font-weight: lighter;
+  margin-left: 27px;
+  margin-top: -20px;
+}
+
+.lesson-description-links {
+  margin-left: -40px;
+}
+
+.lesson-progress {
+  margin-left: 100px;
+}
+
+.lesson-progress .number {
+  margin-left: 300px;
+  margin-top: -150px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  letter-spacing: 0;
+  color: #121212;
+}
+
+.completed {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #121212;
+  opacity: 50%;
+  left: 300px;
+  margin-top: -30px;
+}
+
+.lesson-progress svg {
+  margin-top: 10px;
+  margin-left: 200px;
+}
+
+.lesson-progress svg circle {
+  width: 75px;
+  height: 75px;
+  fill: none;
+  stroke-width: 10;
+  stroke: #000;
+  transform: translate(5px, 5px);
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  stroke-linecap: round;
+}
+
+.lesson-progress svg circle:nth-child(1) {
+  stroke-dashoffset: 0;
+  stroke: #e8e8e8;
+}
+
+.lesson-progress svg circle:nth-child(2) {
+  /* change value here to show progress */
+  stroke-dashoffset: 50;
+  stroke: #0290ff;
+}
+
+.lesson-link {
+  display: inline;
+  font-family: 'Roboto Slab', serif;
+  font-size: 14px;
+  color: #4386bf;
+  letter-spacing: 0;
+  font-weight: lighter;
+  margin-left: 27px;
+}
+
+.lesson-panel {
+  width: 1200px;
+  height: 170px;
+  background-color: #ffffff;
+  margin-left: 100px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.list-item:hover {
+  opacity: 100%;
+}
+
+.profile-button {
+  width: 50px;
+  margin-left: 500px;
+  justify-content: center;
+  text-align: center;
+}
+
+.nav-buttons {
+  position: absolute;
+  margin-top: 23px;
+  margin-left: 700px;
+}
+
+.update-current {
+  font-family: 'Roboto Slab', serif;
+  font-weight: lighter;
+  letter-spacing: 0;
+  font-size: 13px;
+  color: #121212;
+  opacity: 50%;
+}
+
+.update-chapter {
+  font-family: 'Roboto Slab', serif;
+  font-weight: lighter;
+  font-size: 16px;
+  color: #121212;
+  letter-spacing: -0.4px;
+  margin-top: -10px;
+}
+
+.update-button {
+  font-family: 'Roboto Slab', serif;
+  font-weight: lighter;
+  font-size: 13px;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #0290ff;
+  width: 184px;
+  height: 33px;
+}
+
+.lesson-update {
+  margin-right: 147px;
+}
+
+.form-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #888888;
+  letter-spacing: -0.18;
+  margin-left: 100px;
+}
+
+.form {
+  display: inline;
+  margin-left: 100px;
+}
+
+.input-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.15px;
+  color: #c4c4c4;
+  border: 1px solid lightgray;
+  width: 664px;
+  height: 45px;
+  border-radius: 4px;
+}
+
+.input-select {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.15px;
+  color: #c4c4c4;
+  border: 1px solid lightgray;
+  width: 285px;
+  height: 45px;
+  border-radius: 4px;
+  margin-left: 24px;
+  background-color: #fff;
+}
+
+.input-submit {
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    font-size: 13px;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #0290ff;
+    width: 184px;
+    height: 45px;
+    margin-left: 24px;
+}
+
+.line-div {
+  color: #eee;
+  opacity: 50%;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.nav-select {
+  background-color: #fff;
+  border: none;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
 }
