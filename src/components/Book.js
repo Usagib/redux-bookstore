@@ -3,28 +3,26 @@ import PropTypes from 'prop-types';
 
 const Book = props => {
   const { book, clickHandler } = props;
-  const { title, category } = book;
+  const { id, title, category } = book;
   const removeBook = () => {
     clickHandler(book);
   };
   return (
-    <div className="lesson-description">
-      <p className="lesson-description-category">{category}</p>
-      <p className="lesson-description-title">{title}</p>
-      <ul className="lesson-description-links">
-        <li className="lesson-link">
-          <button
-            type="submit"
-            className="btn-remove"
-            onClick={() => {
-              removeBook(book);
-            }}
-          >
-            Remove
+    <tr>
+      <td>{id}</td>
+      <td>{title}</td>
+      <td>{category}</td>
+      <td>
+        <button
+          type="submit"
+          onClick={() => {
+            removeBook(book);
+          }}
+        >
+          Remove
         </button>
-        </li>
-      </ul>
-    </div>
+      </td>
+    </tr>
   );
 };
 
