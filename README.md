@@ -1,9 +1,6 @@
 <br />
 <p align="center">
- <a href="https://github.com/Usagib/redux-bookstore">
-   <img src="public/logo512.png" alt="Logo" style="width: 20%;">
-
- </a>
+ <img src="https://user-images.githubusercontent.com/45620987/89311998-0154ac00-d677-11ea-91b7-24a45f4548f7.png">
 
  <h3 align="center">Bookstore App : React + Redux</h3>
 
