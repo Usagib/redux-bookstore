@@ -40,6 +40,7 @@ class BookList extends React.Component {
             <ul className="nav-list-items">
               <li className="list-item">BOOKS</li>
               <li className="list-item">
+                Filter:
                 <CategoryFilter
                   onChange={this.handleFilterChange}
                 />
@@ -56,6 +57,7 @@ class BookList extends React.Component {
             />
           ))}
         </div>
+        <hr />
       </div>
     );
   }

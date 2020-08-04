@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Book = props => {
   const { book, clickHandler } = props;
-  const { id, title, category } = book;
+  const { title, category } = book;
   const removeBook = () => {
     clickHandler(book);
   };
@@ -15,6 +15,7 @@ const Book = props => {
         <li className="lesson-link">
           <button
             type="submit"
+            className="btn-remove"
             onClick={() => {
               removeBook(book);
             }}
