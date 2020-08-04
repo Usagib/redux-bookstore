@@ -1,6 +1,5 @@
 <br />
 <p align="center">
- ![Screenshot 2020-08-04 at 17 20 32](https://user-images.githubusercontent.com/45620987/89311998-0154ac00-d677-11ea-91b7-24a45f4548f7.png)
 
  <h3 align="center">Bookstore App : React + Redux</h3>
 
@@ -12,6 +11,7 @@
    <br />
  </p>
 </p>
+ ![Screenshot 2020-08-04 at 17 20 32](https://user-images.githubusercontent.com/45620987/89311998-0154ac00-d677-11ea-91b7-24a45f4548f7.png)
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
