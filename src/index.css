@@ -63,7 +63,6 @@ body {
 }
 
 .lesson-description-category {
-  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   color: #121212;
   opacity: 50%;
@@ -111,10 +110,6 @@ body {
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
-}
-
-.list-item:hover {
-  opacity: 100%;
 }
 
 .profile-button {
