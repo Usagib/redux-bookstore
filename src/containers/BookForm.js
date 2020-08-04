@@ -68,8 +68,8 @@ class BookForm extends React.Component {
   render() {
     const { title, category, error } = this.state;
     return (
-      <form>
-        <h3>Add a book</h3>
+      <form className="form">
+        <h3 className="form-title">Add a book</h3>
         <span>{error}</span>
         <br />
         <input
@@ -78,12 +78,14 @@ class BookForm extends React.Component {
           onChange={this.handleChange}
           type="text"
           placeholder="title"
+          className="input-title"
         />
         <br />
         <select
           id="Category"
           value={category}
           onChange={this.handleChange}
+          className="input-select"
         >
           <option key="cat-default" value={cat}>
             Category
@@ -92,7 +94,7 @@ class BookForm extends React.Component {
             <option key={`cat-${cat}`}>{cat}</option>
           ))}
         </select>
-        <button type="submit" onClick={this.handleSubmit}>
+        <button type="submit" className="input-submit" onClick={this.handleSubmit}>
           Confirm
         </button>
       </form>

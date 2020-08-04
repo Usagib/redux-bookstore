@@ -32,27 +32,30 @@ class BookList extends React.Component {
 
     return (
       <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Book ID</th>
-              <th>Title</th>
-              <th>Category</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filterBooks.map(book => (
-              <Book
-                key={book.id}
-                book={book}
-                clickHandler={this.handleRemoveBook}
-              />
-            ))}
-          </tbody>
-        </table>
-        <CategoryFilter
-          onChange={this.handleFilterChange}
-        />
+        <div className="nav-bar">
+          <div className="nav-logo">
+            <span className="logo">Bookstore CMS</span>
+          </div>
+          <div className="nav-list">
+            <ul className="nav-list-items">
+              <li className="list-item">BOOKS</li>
+              <li className="list-item">
+                <CategoryFilter
+                  onChange={this.handleFilterChange}
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="lesson-panel">
+          {filterBooks.map(book => (
+            <Book
+              key={book.id}
+              book={book}
+              clickHandler={this.handleRemoveBook}
+            />
+          ))}
+        </div>
       </div>
     );
   }

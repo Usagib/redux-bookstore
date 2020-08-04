@@ -9,7 +9,7 @@ const CategoryFilter = props => {
     onChange(value);
   };
   return (
-    <select name="category" onChange={handleChange}>
+    <select className="nav-select" name="category" onChange={handleChange}>
       <option>All</option>
       {cat.map(category => (
         <option key={category}>
