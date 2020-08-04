@@ -1,15 +1,16 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createBook } from '../actions/index';
 
-const cat = [
-  "Action",
-  "Biography",
-  "History",
-  "Horror",
-  "Kids",
-  "Learning",
-  "Sci-Fi",
+export const cat = [
+  'Action',
+  'Biography',
+  'History',
+  'Horror',
+  'Kids',
+  'Learning',
+  'Sci-Fi',
 ];
 
 class BookForm extends React.Component {
@@ -19,6 +20,7 @@ class BookForm extends React.Component {
       id: Math.round(Math.random() * 100),
       title: '',
       category: '',
+      error: '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,54 +42,76 @@ class BookForm extends React.Component {
       default:
         return this.state;
     }
+    return false;
   }
 
   handleSubmit(event) {
+    const { title, category } = this.state;
+    const { bookSubmit } = this.props;
     event.preventDefault();
-    console.log(this.state.title);
-    console.log(this.state.category);
-    if (this.state.title === '' || this.state.category === '') {
-      alert('Please enter your book name and category');
+    if (title === '' || category === '') {
+      this.setState({
+        error: 'Please make sure to fill all the fields',
+      });
     } else {
-      this.props.bookSubmit(this.state);
+      bookSubmit(this.state);
       this.setState({
         id: Math.round(Math.random() * 100),
         title: '',
         category: '',
+        error: '',
       });
     }
+    return true;
   }
 
   render() {
+    const { title, category, error } = this.state;
     return (
-      <form>
-        <h3>Add a book</h3>
-        <br />
-        <input id="Title"
-          value={this.state.title}
-          onChange={this.handleChange}
-          type="text"
-          placeholder="title"
-        />
-        <br />
-        <select id="Category"
-          value={this.state.category}
-          onChange={this.handleChange}>
-          <option key="cat-default" value={cat}>Category</option>
-          {cat.map(cat => (<option key={`cat-${cat}`}>{cat}</option>))}
-        </select>
-        <button type="submit" onClick={this.handleSubmit}>Confirm</button>
-      </form>
+      <div>
+        <h3 className="form-title">Add a book</h3>
+        <form className="form">
+          <span>{error}</span>
+          <br />
+          <input
+            id="Title"
+            value={title}
+            onChange={this.handleChange}
+            type="text"
+            placeholder="title"
+            className="input-title"
+          />
+          <br />
+          <select
+            id="Category"
+            value={category}
+            onChange={this.handleChange}
+            className="input-select"
+          >
+            <option key="cat-default" value={cat}>
+              Category
+          </option>
+            {cat.map(cat => (
+              <option key={`cat-${cat}`}>{cat}</option>
+            ))}
+          </select>
+          <button type="submit" className="input-submit" onClick={this.handleSubmit}>
+            Confirm
+        </button>
+        </form>
+      </div>
     );
   }
-};
+}
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    bookSubmit: (book) => {
-      dispatch(createBook(book))
-    }
-  }
+const mapDispatchToProps = dispatch => ({
+  bookSubmit: book => {
+    dispatch(createBook(book));
+  },
+});
+
+BookForm.propTypes = {
+  bookSubmit: PropTypes.func.isRequired,
 };
 
 export default connect(null, mapDispatchToProps)(BookForm);

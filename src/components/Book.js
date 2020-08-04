@@ -1,27 +1,40 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Book = (props) => {
-  const { book } = props;
-  const { id, title, category } = book;
-  const { clickHandler } = props;
+const Book = props => {
+  const { book, clickHandler } = props;
+  const { title, category } = book;
   const removeBook = () => {
     clickHandler(book);
   };
   return (
-    <tr>
-      <td>{id}</td>
-      <td>{title}</td>
-      <td>{category}</td>
-      <td><button type="submit" onClick={()=> {
-        removeBook(book)}}>Remove</button></td>
-    </tr>
+    <div className="lesson-description">
+      <p className="lesson-description-category">{category}</p>
+      <p className="lesson-description-title">{title}</p>
+      <ul className="lesson-description-links">
+        <li className="lesson-link">
+          <button
+            type="submit"
+            className="btn-remove"
+            onClick={() => {
+              removeBook(book);
+            }}
+          >
+            Remove
+        </button>
+        </li>
+      </ul>
+    </div>
   );
 };
 
 Book.propTypes = {
-  id: PropTypes.string,
-  title: PropTypes.string,
+  clickHandler: PropTypes.func.isRequired,
+  book: PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    category: PropTypes.string,
+  }).isRequired,
 };
 
 export default Book;
