@@ -57,7 +57,6 @@ class BookList extends React.Component {
             clickHandler={this.handleRemoveBook}
           />
         ))}
-        <hr />
       </div>
     );
   }
