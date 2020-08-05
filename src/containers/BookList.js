@@ -31,7 +31,7 @@ class BookList extends React.Component {
     }
 
     return (
-      <div>
+      <div className="wrapper">
         <div className="nav-bar">
           <div className="nav-logo">
             <span className="logo">Bookstore CMS</span>
