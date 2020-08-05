@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { removeBook, changeFilter } from '../actions/index';
 import Book from '../components/Book';
-import CategoryFilter from './CategoryFilter';
+import CategoryFilter from '../components/CategoryFilter';
 
 class BookList extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class BookList extends React.Component {
     const { bookList, filter } = this.props;
     let filterBooks = bookList;
 
-    if (filter !== 'All') {
+    if (filter !== 'CATEGORIES') {
       filterBooks = bookList.filter(book => book.category === filter);
     }
 
@@ -40,23 +40,23 @@ class BookList extends React.Component {
             <ul className="nav-list-items">
               <li className="list-item">BOOKS</li>
               <li className="list-item">
-                Filter:
                 <CategoryFilter
                   onChange={this.handleFilterChange}
                 />
               </li>
             </ul>
           </div>
+          <div className="nav-buttons">
+            <img className="profile-button" src="profile.png"></img>
+          </div>
         </div>
-        <div className="lesson-panel">
-          {filterBooks.map(book => (
-            <Book
-              key={book.id}
-              book={book}
-              clickHandler={this.handleRemoveBook}
-            />
-          ))}
-        </div>
+        {filterBooks.map(book => (
+          <Book
+            key={book.id}
+            book={book}
+            clickHandler={this.handleRemoveBook}
+          />
+        ))}
         <hr />
       </div>
     );
@@ -81,7 +81,7 @@ BookList.propTypes = {
 };
 
 BookList.defaultProps = {
-  filter: 'All',
+  filter: 'CATEGORIES',
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);

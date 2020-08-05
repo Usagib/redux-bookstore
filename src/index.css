@@ -1,27 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@300;700&display=swap');
+/*
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto Slab', serif;
+*/
 body {
   margin: 0;
 }
 
 .main-container {
-  height: 100%;
-  width: 100%;
+  position: absolute;
+  height: 1434px;
+  width: 1600px;
   background-color: #f5f6fa; /*pale-grey*/
   box-sizing: border-box;
 }
 
 .panel {
-  width: 90%;
-  height: auto;
+  width: 1400px;
+  height: 1097px;
+  radius: 4px;
+  margin: 149px 100px 188px 100px;/*149px 100px 188px 100px;*/
   background-color: #fafafa;
-  margin: 5% 5%;
   position: absolute;
   box-shadow: 20px 20px 50px 0px rgba(0,0,0,0.2);
 }
 
 .nav-bar {
-  width: 100%;
+  width: 1400px;
   height: 95px;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
   background-color: #fff;
   display: flex;
   flex-wrap: nowrap;
@@ -49,14 +56,6 @@ body {
   color: #121212;
   opacity: 50%;
   letter-spacing: 1.9px;
-}
-
-.lesson-description {
-  width: 80%;
-  border: solid thin lightgrey;
-  margin: 30px 10%;
-  background-color: #fff;
-  color: black;
 }
 
 .lesson-description-category {
@@ -91,6 +90,58 @@ body {
   margin-left: -40px;
 }
 
+.lesson-progress {
+  margin-left: 100px;
+}
+
+.lesson-progress .number {
+  margin-left: 300px;
+  margin-top: -150px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  letter-spacing: 0;
+  color: #121212;
+}
+
+.completed {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #121212;
+  opacity: 50%;
+  left: 300px;
+  margin-top: -30px;
+}
+
+.lesson-progress svg {
+  margin-top: 10px;
+  margin-left: 200px;
+}
+
+.lesson-progress svg circle {
+  width: 75px;
+  height: 75px;
+  fill: none;
+  stroke-width: 10;
+  stroke: #000;
+  transform: translate(5px, 5px);
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  stroke-linecap: round;
+}
+
+.lesson-progress svg circle:nth-child(1) {
+  stroke-dashoffset: 0;
+  stroke: #e8e8e8;
+}
+
+.lesson-progress svg circle:nth-child(2) {
+  /* change value here to show progress */
+  stroke-dashoffset: 50;
+  stroke: #0290ff;
+}
+
 .lesson-link {
   display: inline;
   font-family: 'Roboto Slab', serif;
@@ -102,9 +153,12 @@ body {
 }
 
 .lesson-panel {
-  width: 100%;
-  margin: 30px 0px;
-  display: block;
+  width: 1200px;
+  height: 170px;
+  background-color: #ffffff;
+  margin-left: 100px;
+  margin-bottom: 50px;
+  display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
@@ -116,6 +170,7 @@ body {
 
 .profile-button {
   width: 50px;
+  margin-left: 500px;
   justify-content: center;
   text-align: center;
 }
@@ -123,6 +178,7 @@ body {
 .nav-buttons {
   position: absolute;
   margin-top: 23px;
+  margin-left: 700px;
 }
 
 .update-current {
@@ -170,9 +226,8 @@ body {
 }
 
 .form {
-  display: flex;
-  height: 100px;
-  margin: 0px 10%;
+  display: inline;
+  margin-left: 100px;
 }
 
 .input-title {
@@ -181,10 +236,9 @@ body {
   letter-spacing: -0.15px;
   color: #c4c4c4;
   border: 1px solid lightgray;
-  height: 42px;
+  width: 664px;
+  height: 45px;
   border-radius: 4px;
-  width: 40%;
-  padding-left: 10px;
 }
 
 .input-select {
@@ -193,9 +247,9 @@ body {
   letter-spacing: -0.15px;
   color: #c4c4c4;
   border: 1px solid lightgray;
+  width: 285px;
   height: 45px;
   border-radius: 4px;
-  padding: 5px 30px;
   margin-left: 24px;
   background-color: #fff;
 }
@@ -209,15 +263,9 @@ body {
     text-align: center;
     border-radius: 5px;
     background-color: #0290ff;
-    padding: 5px 20px;
-    margin-left: 24px;
+    width: 184px;
     height: 45px;
-}
-
-.btn-remove:hover {
-  background-color: red;
-  color: #fff;
-  border: solid red;
+    margin-left: 24px;
 }
 
 .line-div {
