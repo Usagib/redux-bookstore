@@ -60,6 +60,10 @@ body {
   letter-spacing: 1.9px;
 }
 
+.lesson-description {
+  width: 1000px;
+}
+
 .lesson-description-category {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
@@ -111,7 +115,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   color: #121212;
-  opacity: 50%;
+  opacity: 0.5;
   left: 300px;
   margin-top: -30px;
 }
@@ -157,7 +161,8 @@ body {
   display: inline;
 }
 
-button, input[type="submit"] {
+button,
+input[type="submit"] {
 	background: none;
 	color: inherit;
 	border: none;
@@ -180,7 +185,7 @@ button, input[type="submit"] {
 }
 
 .list-item:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .profile-button {
@@ -236,7 +241,7 @@ button, input[type="submit"] {
   font-weight: bold;
   font-size: 20px;
   color: #888;
-  letter-spacing: -0.18;
+  letter-spacing: -0.18px;
   margin-left: 100px;
 }
 
@@ -273,7 +278,7 @@ button, input[type="submit"] {
   font-family: 'Roboto Slab', serif;
   font-weight: bold;
   font-size: 13px;
-  color: #ffffff;
+  color: #fff;
   letter-spacing: 0.5px;
   text-align: center;
   border-radius: 5px;

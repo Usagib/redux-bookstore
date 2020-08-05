@@ -86,7 +86,7 @@ class BookForm extends React.Component {
             id="Category"
             value={category}
             onChange={this.handleChange}
-            >
+          >
             <option key="cat-default" value={cat}>
               Category
             </option>
@@ -99,7 +99,7 @@ class BookForm extends React.Component {
             className="input-submit"
             onClick={this.handleSubmit}
           >
-          ADD BOOK
+            ADD BOOK
           </button>
         </form>
       </div>

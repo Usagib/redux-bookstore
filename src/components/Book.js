@@ -16,8 +16,11 @@ const Book = props => {
         <ul className="lesson-description-links">
           <li className="lesson-link">Comments</li>
           <li className="lesson-link">
-            <button className="remove-button" onClick={() => {
-              removeBook(book);
+            <button
+              type="button"
+              className="remove-button"
+              onClick={() => {
+                removeBook(book);
               }}
             >
               Remove
