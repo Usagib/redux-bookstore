@@ -69,7 +69,7 @@ class BookForm extends React.Component {
     const { title, category, error } = this.state;
     return (
       <div className="form">
-        <hr className="line-div"></hr>
+        <hr className="line-div" />
         <p className="form-title">ADD NEW BOOK</p>
         <p>{error}</p>
         <form className="form">
@@ -81,26 +81,26 @@ class BookForm extends React.Component {
             placeholder="Book title"
             className="input-title"
           />
-        <select
-          className="input-select"
-          id="Category"
-          value={category}
-          onChange={this.handleChange}
-        >
-          <option key="cat-default" value={cat}>
-            Category
-          </option>
-          {cat.map(cat => (
-            <option key={`cat-${cat}`}>{cat}</option>
-          ))}
-        </select>
-        <button
-          type="submit"
-          className="input-submit"
-          onClick={this.handleSubmit}
-        >
-        ADD BOOK
-        </button>
+          <select
+            className="input-select"
+            id="Category"
+            value={category}
+            onChange={this.handleChange}
+            >
+            <option key="cat-default" value={cat}>
+              Category
+            </option>
+            {cat.map(cat => (
+              <option key={`cat-${cat}`}>{cat}</option>
+            ))}
+          </select>
+          <button
+            type="submit"
+            className="input-submit"
+            onClick={this.handleSubmit}
+          >
+          ADD BOOK
+          </button>
         </form>
       </div>
     );

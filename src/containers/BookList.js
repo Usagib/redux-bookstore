@@ -47,7 +47,7 @@ class BookList extends React.Component {
             </ul>
           </div>
           <div className="nav-buttons">
-            <img className="profile-button" src="profile.png"></img>
+            <img alt="profilebutton" className="profile-button" src="profile.png" />
           </div>
         </div>
         {filterBooks.map(book => (

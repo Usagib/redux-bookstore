@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Book = props => {
   const { book, clickHandler } = props;
-  const { id, title, category } = book;
+  const { title, category } = book;
   const removeBook = () => {
     clickHandler(book);
   };
@@ -16,19 +16,20 @@ const Book = props => {
         <ul className="lesson-description-links">
           <li className="lesson-link">Comments</li>
           <li className="lesson-link">
-            <a onClick={() => {
+            <button className="remove-button" onClick={() => {
               removeBook(book);
-            }}>
+              }}
+            >
               Remove
-            </a>
+            </button>
           </li>
           <li className="lesson-link">Edit</li>
         </ul>
       </div>
       <div className="lesson-progress">
         <svg>
-          <circle cx="35" cy="35" r="35"></circle>
-          <circle cx="35" cy="35" r="35"></circle>
+          <circle cx="35" cy="35" r="35" />
+          <circle cx="35" cy="35" r="35" />
         </svg>
         <p className="number">87%</p>
         <p className="completed">Completed</p>
@@ -36,7 +37,7 @@ const Book = props => {
       <div className="lesson-update">
         <p className="update-current">Current chapter</p>
         <p className="update-chapter">Chapter IV</p>
-        <button className="update-button">Update Progress</button>
+        <button type="submit" className="update-button">Update Progress</button>
       </div>
     </div>
   );

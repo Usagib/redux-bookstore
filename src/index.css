@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@300;700&display=swap');
-/*
-  font-family: 'Montserrat', sans-serif;
-  font-family: 'Roboto Slab', serif;
-*/
+
 body {
   margin: 0;
 }
@@ -11,7 +8,7 @@ body {
   position: absolute;
   height: 1434px;
   width: 1600px;
-  background-color: #f5f6fa; /*pale-grey*/
+  background-color: #f5f6fa;
   box-sizing: border-box;
 }
 
@@ -22,11 +19,11 @@ body {
 .panel {
   width: 1400px;
   height: auto;
-  radius: 4px;
-  margin: 50px 100px 188px 50px;/*149px 100px 188px 100px;*/
+  border-radius: 4px;
+  margin: 50px 100px 188px 50px;
   background-color: #fafafa;
   position: absolute;
-  box-shadow: 20px 20px 50px 0px rgba(0,0,0,0.2);
+  box-shadow: 20px 20px 50px 0 rgba(0, 0, 0, 0.2);
   padding-bottom: 100px;
 }
 
@@ -48,7 +45,7 @@ body {
 .logo {
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;
-  color: #0290ff; /*azure*/
+  color: #0290ff;
   font-weight: bold;
 }
 
@@ -59,7 +56,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
   color: #121212;
-  opacity: 50%;
+  opacity: 0.5;
   letter-spacing: 1.9px;
 }
 
@@ -67,7 +64,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   color: #121212;
-  opacity: 50%;
+  opacity: 0.5;
   margin-left: 27px;
 }
 
@@ -142,7 +139,6 @@ body {
 }
 
 .lesson-progress svg circle:nth-child(2) {
-  /* change value here to show progress */
   stroke-dashoffset: 50;
   stroke: #0290ff;
 }
@@ -157,10 +153,24 @@ body {
   margin-left: 27px;
 }
 
+.remove-button {
+  display: inline;
+}
+
+button, input[type="submit"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 .lesson-panel {
   width: 1200px;
   height: 170px;
-  background-color: #ffffff;
+  background-color: #fff;
   margin-left: 100px;
   margin-bottom: 50px;
   display: flex;
@@ -192,7 +202,7 @@ body {
   letter-spacing: 0;
   font-size: 13px;
   color: #121212;
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 .update-chapter {
@@ -208,7 +218,7 @@ body {
   font-family: 'Roboto Slab', serif;
   font-weight: lighter;
   font-size: 13px;
-  color: #ffffff;
+  color: #fff;
   letter-spacing: 0.5px;
   text-align: center;
   border-radius: 5px;
@@ -225,7 +235,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 20px;
-  color: #888888;
+  color: #888;
   letter-spacing: -0.18;
   margin-left: 100px;
 }
@@ -260,22 +270,22 @@ body {
 }
 
 .input-submit {
-    font-family: 'Roboto Slab', serif;
-    font-weight: bold;
-    font-size: 13px;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-    text-align: center;
-    border-radius: 5px;
-    background-color: #0290ff;
-    width: 184px;
-    height: 45px;
-    margin-left: 24px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+  font-size: 13px;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #0290ff;
+  width: 184px;
+  height: 45px;
+  margin-left: 24px;
 }
 
 .line-div {
   color: #eee;
-  opacity: 50%;
+  opacity: 0.5;
   margin-left: 100px;
   margin-right: 100px;
 }
@@ -286,8 +296,8 @@ body {
 }
 
 select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-indent: 1px;
-    text-overflow: '';
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
 }
