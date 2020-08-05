@@ -1,9 +1,6 @@
 <br />
 <p align="center">
- <a href="https://github.com/Usagib/redux-bookstore">
-   <img src="public/logo512.png" alt="Logo" style="width: 20%;">
-
- </a>
+ <img src="https://media0.giphy.com/media/eNAsjO55tPbgaor7ma/giphy.gif" style="width: 50%">
 
  <h3 align="center">Bookstore App : React + Redux</h3>
 
@@ -52,6 +49,7 @@ You can acess the live demo or:
 
 ### Screenshots
 
+![Screenshot](public/screenshot.png)
 
 ## Built With
 Project built in React
