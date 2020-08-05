@@ -1,6 +1,6 @@
 <br />
 <p align="center">
- <img src="https://user-images.githubusercontent.com/45620987/89311998-0154ac00-d677-11ea-91b7-24a45f4548f7.png">
+ <img src="https://media0.giphy.com/media/eNAsjO55tPbgaor7ma/giphy.gif" style="width: 50%">
 
  <h3 align="center">Bookstore App : React + Redux</h3>
 
@@ -49,6 +49,7 @@ You can acess the live demo or:
 
 ### Screenshots
 
+![Screenshot]('/public/screenshot.png')
 
 ## Built With
 Project built in React
