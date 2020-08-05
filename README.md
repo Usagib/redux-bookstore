@@ -49,7 +49,7 @@ You can acess the live demo or:
 
 ### Screenshots
 
-![Screenshot]('/public/screenshot.png')
+![Screenshot](public/screenshot.png)
 
 ## Built With
 Project built in React
